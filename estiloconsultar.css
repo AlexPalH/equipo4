@@ -1,9 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #eef2f7;
     color: #333;
     margin: 0;
     padding: 0;
+    background-image: url('general.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
 }
 
 h2 {
