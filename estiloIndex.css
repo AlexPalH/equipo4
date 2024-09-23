@@ -14,10 +14,10 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('Pene.jpg'); /* Cambia el nombre por tu imagen */
+    background-image: url('viaje.jpg'); 
     background-size: cover;
     background-position: center;
-    z-index: -1; /* Asegúrate de que esté detrás del formulario */
+    z-index: -1; 
 }
 
 /* Estilos del título */
@@ -26,12 +26,12 @@ h1 {
     color: #ffffff; /* Color blanco para destacar sobre la imagen */
     font-size: 28px; /* Tamaño de fuente aumentado */
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
 /* Estilos del formulario */
 form {
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con algo de transparencia */
+    background-color: rgba(255, 255, 255, 0.9); 
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
