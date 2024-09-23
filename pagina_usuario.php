@@ -14,14 +14,14 @@ if ($conexion->connect_errno) {
 $nombre_usuario = "usuarioA"; // Cambiado a usuarioA
 
 // Consultar el perfil del usuario y sus permisos
-$query = "SELECT id, nombre, rol, permiso_insertar, permiso_borrar, permiso_modificar, permiso_consultar FROM usuarios WHERE nombre = '$nombre_usuario'";
+$query = "SELECT id, nombre, tipo_rol AS rol, permiso_insertar, permiso_borrar, permiso_modificar, permiso_consultar FROM usuarios WHERE nombre = '$nombre_usuario'";
 $resultado = $conexion->query($query);
 
 if ($resultado && $resultado->num_rows > 0) {
     $fila = $resultado->fetch_assoc();
     $id_usuario = $fila['id'];
     $nombre_usuario = $fila['nombre'];
-    $rol = $fila['rol'];
+    $rol = $fila['rol']; // Ahora 'rol' hace referencia a 'tipo_rol'
     $permiso_insertar = $fila['permiso_insertar'];
     $permiso_borrar = $fila['permiso_borrar'];
     $permiso_modificar = $fila['permiso_modificar'];
@@ -64,7 +64,6 @@ if ($resultado && $resultado->num_rows > 0) {
             <li><a href="#" onclick="alert('No tienes acceso a esto ya que han cambiado tu rol a <?php echo htmlspecialchars($rol); ?>');">Consultar Registros</a></li>
         <?php } ?>
     </ul>
-
 
     <!-- Botón para regresar a la página anterior -->
     <button onclick="goBack()">Regresar</button>
