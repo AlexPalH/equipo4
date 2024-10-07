@@ -1,1 +1,37 @@
+name: PHP CI
 
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.0'  # Usa la versión de PHP que estés usando
+        extensions: mbstring, intl, xml, mysqli  # Dependiendo de tus necesidades
+
+    - name: Install dependencies with Composer
+      run: composer install
+
+    - name: Run PHP linter
+      run: php -l **/*.php
+
+    - name: Run PHPUnit tests
+      run: |
+        if [ -f ./vendor/bin/phpunit ]; then
+          ./vendor/bin/phpunit --testdox
+        else
+          echo "No PHPUnit tests found."
+        fi
